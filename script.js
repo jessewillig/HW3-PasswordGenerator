@@ -20,8 +20,10 @@ function generatePassword() {
   var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
   var symbols = ["~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "?", "<", ">", "_", "-"];
   var passwordLength = 0;
+  var okayChar = [];
   var userCriteria = [];
   var randomPassword = [];
+  var generateBtn = document.querySelector("#generate");
 
   // Ask password length w/ while loop including alert
   while (passwordLength > 8 || passwordLength < 128) {
@@ -81,8 +83,12 @@ function generatePassword() {
   if (askLower, askUpper, askNumber, askSymbols === false) {
     alert("You must chose one or more!")
   }
+  console.log(okayChar);
 
   // For loop to random select ok characters
-
+  for (var i = 0; i < passwordLength.length; i++) {
+    randomPassword.push(okayChar[Math.floor(Math.random() * okayChar.length)]);
+  }
   // Array concatenate. Create a string from array
+  return randomPassword.join("")
 }
