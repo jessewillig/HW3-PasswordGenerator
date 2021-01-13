@@ -23,64 +23,66 @@ function generatePassword() {
   var userCriteria = [];
   var randomPassword = [];
 
-// Ask password length w/ while loop including alert
-while (passwordLength > 8 || passwordLength < 128) {
-  passwordLength = prompt("Please select password length greater than 8 and less than 128 characters.");
-  console.log(passwordLength);
-}
+  // Ask password length w/ while loop including alert
+  while (passwordLength > 8 || passwordLength < 128) {
+    passwordLength = prompt("Please select password length greater than 8 and less than 128 characters.");
+    console.log(passwordLength);
+  }
 
-// Ask if user wants to use lowercase letters
-var askLower = confirm("Do you want lower case letters?");
+  // Ask if user wants to use lowercase letters
+  var askLower = confirm("Do you want lower case letters?");
 
   // Add or exclude lowercase letters w/ if/else
   if (askLower === true) {
-      // Acceptable character push
-    okayChar=okayChar.concat(lowerCase)
+    // Acceptable character push
+    okayChar = okayChar.concat(lowerCase)
     console.log("Lower case OK: " + true);
   } else {
     console.log("Lower case OK: " + false);
   }
 
-// Ask if user wants to use uppercase letters
-var askUpper = confirm("Do you want upper case letters?");
+  // Ask if user wants to use uppercase letters
+  var askUpper = confirm("Do you want upper case letters?");
 
   // Add or exclude uppercase letters w/ if/else
   if (askUpper === true) {
-      // Acceptable character push
-      okayChar=okayChar.concat(upperCase)
+    // Acceptable character push
+    okayChar = okayChar.concat(upperCase)
     console.log("Upper case OK: " + true);
   } else {
     console.log("Upper case OK: " + false);
   }
 
-// Ask if user wants to use numbers
-var askNumber = confirm("Do you want numbers?");
+  // Ask if user wants to use numbers
+  var askNumber = confirm("Do you want numbers?");
 
   // Add or exclude numbers w/ if/else
   if (askNumber === true) {
-      // Acceptable character push
-    okayChar=okayChar.concat(numbers)
+    // Acceptable character push
+    okayChar = okayChar.concat(numbers)
     console.log("Numbers OK: " + true);
   } else {
     console.log("Numbers OK: " + false);
   }
 
-// Ask if user wants to use symbols
-var askSymbols = confirm("Do you want symbols?");
+  // Ask if user wants to use symbols
+  var askSymbols = confirm("Do you want symbols?");
 
   // Add or exclude symbols w/ if/else
-  if (askLower === true) {
-     // Acceptable character push
-    okayChar=okayChar.concat(symbols)
+  if (askSymbols === true) {
+    // Acceptable character push
+    okayChar = okayChar.concat(symbols)
     console.log("Symbols OK: " + true);
   } else {
     console.log("Symbols OK: " + false);
   }
- 
 
-// Edge case to prompt if user does not select 1 character type
+  // Edge case to prompt if user does not select 1 character type
+  if (askLower, askUpper, askNumber, askSymbols === false) {
+    alert("You must chose one or more!")
+  }
 
-// For loop to random select ok characters
+  // For loop to random select ok characters
 
-// Array concatenate. Create a string from array
+  // Array concatenate. Create a string from array
 }
