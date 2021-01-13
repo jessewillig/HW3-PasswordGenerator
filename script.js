@@ -26,8 +26,11 @@ function generatePassword() {
   var generateBtn = document.querySelector("#generate");
 
   // Ask password length w / while loop including alert
-  while (passwordLength > 8 || passwordLength < 128) {
+  while (randomPassword.length < 8 || randomPassword.length > 128) {
     passwordLength = prompt("Please select password length greater than 8 and less than 128 characters.");
+    if (passwordLength < 8 || passwordLength > 128) {
+      passwordLength = prompt("Please select password length greater than 8 and less than 128 characters.");
+    }
     console.log(passwordLength);
 
     // Ask if user wants to use lowercase letters
@@ -85,7 +88,7 @@ function generatePassword() {
     console.log(okayChar);
 
     // For loop to random select ok characters
-    for (var i = 0; i < passwordLength.length; i++) {
+    for (var i = 0; i < passwordLength; i++) {
       randomPassword.push(okayChar[Math.floor(Math.random() * okayChar.length)]);
     }
   }
