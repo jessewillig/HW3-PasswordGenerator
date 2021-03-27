@@ -1,4 +1,4 @@
-# HW3-PasswordGenerator
+# PasswordGenerator
 
 * This site is designed to generate a secure password using letters (CAPS and lower case), numbers and special characters for ultimate security!
 
